@@ -10,7 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@RequestMapping("api/v1/auth")
+@RequestMapping("/api/v1/auth")
 @RestController
 public class AuthControllers {
     @Autowired
