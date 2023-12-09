@@ -3,6 +3,8 @@ package com.example.responsivesinglepage.dto.response;
 import com.example.responsivesinglepage.entity.Roles;
 import lombok.*;
 
+import java.util.List;
+
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
@@ -11,7 +13,7 @@ import lombok.*;
 public class UserResponse {
     private String id;
     private String name;
-    private String sectors;
+    private List<String> sectors;
     private String agree;
 
     private Roles role;

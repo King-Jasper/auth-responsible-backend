@@ -1,5 +1,5 @@
 package com.example.responsivesinglepage.dto.request;
-
+import java.util.*;
 import lombok.*;
 
 @Builder
@@ -9,7 +9,7 @@ import lombok.*;
 @Setter
 public class UserRegisterDTO {
     private String name;
-    private String sectors;
+    private List<String> sectors;
     private String agree;
     private String password;
 }

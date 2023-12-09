@@ -20,6 +20,10 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 @Slf4j
@@ -41,9 +45,12 @@ public class AuthServiceImpl implements AuthService {
       }
     }
     private Users mappUser(UserRegisterDTO userRegisterDTO){
+
+        List<String> sectors=  userRegisterDTO.getSectors();
+
         return Users.builder()
                 .agree(userRegisterDTO.getAgree())
-                .sectors(userRegisterDTO.getSectors())
+                .sectors(sectors)
                 .role(Roles.USER)
                 .password(passwordEncoder.encode(userRegisterDTO.getPassword()))
                 .name(userRegisterDTO.getName())
