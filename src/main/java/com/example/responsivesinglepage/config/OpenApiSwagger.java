@@ -23,6 +23,10 @@ import org.springframework.context.annotation.Configuration;
                         description = "DEV ENV",
                         url = "http://localhost:8082"
                 ),
+                @Server(
+                        description = "PRO ENV",
+                        url = "https://auth-responsible-backend-production.up.railway.app"
+                )
 
         },
         security = {
