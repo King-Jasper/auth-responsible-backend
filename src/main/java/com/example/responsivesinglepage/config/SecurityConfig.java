@@ -1,6 +1,7 @@
 package com.example.responsivesinglepage.config;
 
 
+import com.example.responsivesinglepage.entity.Roles;
 import com.example.responsivesinglepage.security.JwtAuthFilter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
@@ -25,6 +26,7 @@ public class SecurityConfig {
         httpSecurity.authorizeHttpRequests(authorize ->
                 authorize.requestMatchers(
                                 "/api/v1/auth/**",
+
                                 "/v2/api-docs",
                                 "/v3/api-docs",
                                 "/v3/api-docs/**",
@@ -37,6 +39,7 @@ public class SecurityConfig {
                                 "/swagger-ui.html"
                         )
                         .permitAll()
+
                         .anyRequest()
                         .authenticated()
                         .and()

@@ -12,21 +12,24 @@ import org.springframework.web.bind.annotation.*;
 
 @RequestMapping("/api/v1/auth")
 @RestController
+
 public class AuthControllers {
     @Autowired
     private AuthService authService;
     public AuthControllers(AuthService authService){
         this.authService=authService;
     }
-
+    @CrossOrigin("*")
     @PostMapping("/register")
     public ResponseEntity<UserResponse> register(@RequestBody UserRegisterDTO userRegisterDTO){
         return new ResponseEntity<>(authService.registerUser(userRegisterDTO), HttpStatus.CREATED);
     }
+    @CrossOrigin("*")
     @PostMapping("/login")
     public ResponseEntity<UserLoginResponse> login(@RequestBody LoginRequestDTO loginRequestDTO){
         return new ResponseEntity<>(authService.login(loginRequestDTO), HttpStatus.OK);
     }
+    @CrossOrigin("*")
     @PutMapping("/update")
     public ResponseEntity<UserResponse> update(@RequestBody UserRegisterDTO userRegisterDTO){
         return new ResponseEntity<>(authService.updateUser(userRegisterDTO), HttpStatus.OK);
