@@ -21,7 +21,7 @@ public class Users {
    private String id;
     private String name;
     private List<String> sectors;
-    private String agree;
+    private Boolean agree;
     private String password;
     private Roles role;
 }

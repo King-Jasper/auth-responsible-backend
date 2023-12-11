@@ -15,7 +15,7 @@ public class UserLoginResponse {
     private String jwt;
     private String name;
     private List<String> sectors;
-    private String agree;
+    private Boolean agree;
 
     private Roles role;
 }

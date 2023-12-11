@@ -10,6 +10,6 @@ import lombok.*;
 public class UserRegisterDTO {
     private String name;
     private List<String> sectors;
-    private String agree;
+    private Boolean agree;
     private String password;
 }

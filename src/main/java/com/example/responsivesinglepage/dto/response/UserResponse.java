@@ -14,7 +14,7 @@ public class UserResponse {
     private String id;
     private String name;
     private List<String> sectors;
-    private String agree;
+    private Boolean agree;
 
     private Roles role;
 }
