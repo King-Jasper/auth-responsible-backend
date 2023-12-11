@@ -10,4 +10,5 @@ public interface AuthService {
     UserLoginResponse login(LoginRequestDTO userLoginResponse);
     UserResponse updateUser(UserRegisterDTO userRegisterDTO);
     String deleteUser(String userId);
+    UserResponse getUser(String userId);
 }

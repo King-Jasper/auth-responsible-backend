@@ -13,7 +13,6 @@ import com.example.responsivesinglepage.service.interfaces.AuthService;
 import com.example.responsivesinglepage.utils.UserLogInUtils;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -106,6 +105,16 @@ public class AuthServiceImpl implements AuthService {
         users.setPassword(passwordEncoder.encode(userRegisterDTO.getPassword()));
         users.setSectors(userRegisterDTO.getSectors());
         userRepository.save(users);
+        return mappUserToResponse(users);
+    }
+    @Override
+    public UserResponse getUser(String userId) {
+        String loginUser = UserLogInUtils.getUser();
+        log.info("user {} " ,loginUser);
+
+        Users users = userRepository.findById(userId)
+                .orElseThrow(()-> new UserNotFoundException("User not found"));
+
         return mappUserToResponse(users);
     }
 

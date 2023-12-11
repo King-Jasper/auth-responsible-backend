@@ -34,5 +34,10 @@ public class AuthControllers {
     public ResponseEntity<UserResponse> update(@RequestBody UserRegisterDTO userRegisterDTO){
         return new ResponseEntity<>(authService.updateUser(userRegisterDTO), HttpStatus.OK);
     }
+    @CrossOrigin("*")
+    @GetMapping("/getUser")
+    public ResponseEntity<UserResponse> getUser(@RequestParam("userId") String userId){
+        return new ResponseEntity<>(authService.getUser(userId), HttpStatus.OK);
+    }
 
 }
